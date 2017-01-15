@@ -1,0 +1,15 @@
+{
+  "name": "Procedural-Outer-Space",
+  "description": "Procedural generation challenge",
+  "version": "1.0.0",
+  "author": {
+    "name": "Matthieu Croquelois",
+    "email": "croquelois@gmail.com"
+  },
+  "keywords": [],
+  "main": "./main.js",
+  "dependencies": {
+    "async": "^2.1.4",
+    "lwip": "0.0.9"
+  }
+}
