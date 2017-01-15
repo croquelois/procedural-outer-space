@@ -31,11 +31,11 @@ function doOneImage(width,height,i,cb){
   let rndPos = function(){ return {x:~~(rnd()*width),y:~~(rnd()*height)}; };
   let scale = Math.sqrt(width*height);
   let image = new Grid(width,height);
-  let nbGalaxy = 5;
+  let nbGalaxy = 4;
   image.fill({r:0,g:0,b:0});
   for(let j=0;j<nbGalaxy;j++){
-    let galaxySize = (1+4*rnd());
-    let distance = (4+10*Math.log(1+j))*(1+rnd());
+    let galaxySize = (2+2*rnd());
+    let distance = (8+20*Math.log(1+j));
     let viewSize = scale*galaxySize/distance;
     let intensity = Math.pow(1/distance,0.25);
     let color = {r:0.5+0.5*(rnd()*2-1),g:0.8+0.2*(rnd()*2-1),b:0.9+0.1*(rnd()*2-1)};
@@ -50,7 +50,7 @@ function doOneImage(width,height,i,cb){
   console.log("add stars");
   stars(image, ~~(0.01*width*height));
   console.log("add nebulae");
-  image.addTexture({x:0,y:0}, 1, 0, textureNebulae(0.004),0.5);
+  image.addTexture({x:0,y:0}, 1, 0, textureNebulae(0.001),0.25);
   console.log("write image on disk");
   image.draw(1, "image", "image", i,function(err, name){
     console.log(err || ("image '"+name+"' wrote"));
