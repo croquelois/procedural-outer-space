@@ -17,6 +17,3 @@ image will be written in the image directory
 
 
 ![example3](image-0002.png)
-
-
-![galaxy-video](galaxy.webm)
